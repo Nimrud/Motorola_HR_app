@@ -20,7 +20,7 @@ public class EmployeeController {
     public String getAllEmployees(Model model) {
         List<Employee> employeeList = employeeService.getAllEmployees();
         model.addAttribute("employees", employeeService.getAllEmployees());
-        return "employess";
+        return "employees";
     }
 
 
@@ -39,10 +39,12 @@ public class EmployeeController {
     }
 
 
-    @GetMapping("/employeeForm")
-    public String showNewEmployeeForm(Model model) {
-
-        Employee employee = new Employee();
+    @GetMapping("/admin/employeeForm")
+    public String showNewEmployeeForm(Model model, @RequestParam(required = false, defaultValue = "1") Long id) {
+        Employee employee = employeeService.getEmployeeById(id);
+        if (employee == null) {
+            employee = new Employee();
+        }
         model.addAttribute("employee", employee);
         return "new_employee";
     }

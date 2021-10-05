@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+
+<div th:align="left">
+    <h2>Wybierz czynność:</h2>
+    <h2><a th:href="@{/employees}" th:text="'Lista pracowników'">Employees list</a></h2>
+    <h2><a th:href="@{/admin/employeeForm}" th:text="'Dodanie nowego pracownika'">New Employee</a></h2>
+</div>
+
+</body>
+</html>
