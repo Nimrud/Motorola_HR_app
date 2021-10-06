@@ -16,16 +16,24 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank(message = "Imię nie może być puste")
+    @Column(name = "FIRSTNAME")
     private String firstName;
     @NotBlank(message = "Nazwisko nie może być puste")
+    @Column(name = "LASTNAME")
     private String lastName;
     @Email
+    @Column(name = "EMAIL")
     private String email;
     @NotBlank
     //@PESEL
+    @Column(name = "PESEL")
     private String pesel;
+    @Column(name = "ADDRESS")
     private String address;
+    @Column(name = "POSITION")
+    @Enumerated(EnumType.STRING)
     private Position position;
+    @Column(name = "DESCRIPTION")
     private String description;
     @ManyToOne
     private Payment payment;

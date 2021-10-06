@@ -1,0 +1,6 @@
+insert into employee(firstName, lastName, email, pesel, address, position, description) values('Jan', 'Nowak', 'jannowak@wp.pl', '58102245360', 'Czerwone Maki 82', 'HR', '');
+insert into employee(firstName, lastName, email, pesel, address, position, description) values('Marek', 'Zaruski', 'm_zaruski@gmail.com', '64122404465', 'Marszałkowska 12/75', 'JUNIOR', '');
+insert into employee(firstName, lastName, email, pesel, address, position, description) values('Anna', 'Miziak', 'miziak@poczta.pl', '81041255435', 'Picassa 22/1', 'MID', '');
+insert into employee(firstName, lastName, email, pesel, address, position, description) values('Mariusz', 'Pudzianowski', 'pudzian@pudzian.pl', '74030560515', 'Nowe Borki 22', 'SECURITY', 'nie ma lipy');
+insert into employee(firstName, lastName, email, pesel, address, position, description) values('Paweł', 'Kulczyk', 'prezes@kulczyk.buziaczek.pl', '56041812364', 'Dworkowa 1', 'CEO', '');
+insert into employee(firstName, lastName, email, pesel, address, position, description) values('Barbara', 'Kowalewska', 'barbakow@op.pl', '85123100310', 'KEN 34/8', 'SENIOR', '');
