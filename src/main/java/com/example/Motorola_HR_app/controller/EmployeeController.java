@@ -20,7 +20,7 @@ public class EmployeeController {
     public String getAllEmployees(Model model) {
         List<Employee> employeeList = employeeService.getAllEmployees();
         model.addAttribute("employees", employeeService.getAllEmployees());
-        return "employess";
+        return "employees";
     }
 
 
@@ -39,19 +39,20 @@ public class EmployeeController {
     }
 
 
-    @GetMapping("/employeeForm")
+    @GetMapping("/admin/employeeForm")
     public String showNewEmployeeForm(Model model) {
-
+        List<Employee.Position> positions = employeeService.getAllPositions();
         Employee employee = new Employee();
         model.addAttribute("employee", employee);
+        model.addAttribute("positions", positions);
         return "new_employee";
     }
 
 
-    @PostMapping("/employees")
+    @PostMapping("/admin/employeeForm")
     public String saveEmployee(@ModelAttribute("employee") Employee employee) {
         employeeService.saveEmployee(employee);
-        return "redirect:employees";
+        return "redirect:/employees";
     }
 
 }

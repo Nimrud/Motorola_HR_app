@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<section th:fragment="menuFragment">
+    <nav>
+        <ul class="menu">
+            <li><a th:href="@{/about}">O aplikacji</a></li>
+            <li><a th:href="@{/employees}">Lista pracowników</a></li>
+            <li><a th:href="@{/admin/employeeForm}">Nowy pracownik</a></li>
+        </ul>
+    </nav>
+</section>
+</html>

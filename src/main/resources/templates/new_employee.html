@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj nowego pracownika</title>
+    <link th:href="@{/main.css}" rel="stylesheet" />
+</head>
+<body>
+
+<p th:replace="~{fragments/menu :: menuFragment}"></p>
+
+<div th:align="center">
+    <form action="#" th:action="@{/admin/employeeForm}" th:object="${employee}" method="POST">
+        <table th:align="center" th:cellpadding="5" th:border="1">
+            <tr>
+                <td>Imię: </td>
+                <td><input type="text" th:field="*{firstName}"></td>
+            </tr>
+            <tr>
+                <td>Nazwisko: </td>
+                <td><input type="text" th:field="*{lastName}"></td>
+            </tr>
+            <tr>
+                <td>E-mail: </td>
+                <td><input type="text" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <td>PESEL: </td>
+                <td><input type="text" th:field="*{pesel}"></td>
+            </tr>
+            <tr>
+                <td>Adres zamieszkania: </td>
+                <td><input type="text" th:field="*{address}"></td>
+            </tr>
+            <tr>
+                <td>Stanowisko: </td>
+                <td>
+                    <select name="position" class="dropdown">
+                        <option th:text="'wybierz z listy'"></option>
+                        <option th:each="positionOption : ${positions}"
+                                th:value="${positionOption}"
+                                th:text="${positionOption.displayPosition}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Opis: </td>
+                <td><input type="text" th:field="*{description}"></td>
+            </tr>
+            <tr>
+                <td>Lista przelewów: </td>
+                <td></td>
+            </tr>
+
+        </table></br>
+        <input type="submit" value="ZATWIERDŹ" style="padding: 5px 5px">
+    </form>
+</div>
+
+<footer th:replace="~{fragments/footer :: footerFragment}">Footer</footer>
+
+</body>
+</html>

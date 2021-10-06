@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista pracowników</title>
+    <link th:href="@{/main.css}" rel="stylesheet" />
+</head>
+<body>
+
+<p th:replace="~{fragments/menu :: menuFragment}"></p>
+
+<table id="allEmployees" th:align="center" th:cellpadding="5" th:border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Imię</td>
+        <td>Nazwisko</td>
+        <td>E-mail</td>
+        <td>PESEL</td>
+        <td>Adres zamieszkania</td>
+        <td>Stanowisko</td>
+        <td>Opis</td>
+        <td>Lista przelewów</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employees}">
+        <td><span th:text="${employee.id}">ID</span></td>
+        <td><span th:text="${employee.firstName}">Name</span></td>
+        <td><span th:text="${employee.lastName}">Surname</span></td>
+        <td><span th:text="${employee.email}">E-mail</span></td>
+        <td><span th:text="${employee.pesel}">PESEL</span></td>
+        <td><span th:text="${employee.address}">Address</span></td>
+        <td><span th:text="${employee.position.displayPosition}">Position</span></td>
+        <td><span th:text="${employee.description}">Description</span></td>
+        <td><span>-</span></td>
+    </tr>
+    </tbody>
+</table>
+
+<footer th:replace="~{fragments/footer :: footerFragment}">Footer</footer>
+
+</body>
+</html>
