@@ -40,20 +40,19 @@ public class EmployeeController {
 
 
     @GetMapping("/admin/employeeForm")
-    public String showNewEmployeeForm(Model model, @RequestParam(required = false, defaultValue = "1") Long id) {
-        Employee employee = employeeService.getEmployeeById(id);
-        if (employee == null) {
-            employee = new Employee();
-        }
+    public String showNewEmployeeForm(Model model) {
+        List<Employee.Position> positions = employeeService.getAllPositions();
+        Employee employee = new Employee();
         model.addAttribute("employee", employee);
+        model.addAttribute("positions", positions);
         return "new_employee";
     }
 
 
-    @PostMapping("/employees")
+    @PostMapping("/admin/employeeForm")
     public String saveEmployee(@ModelAttribute("employee") Employee employee) {
         employeeService.saveEmployee(employee);
-        return "redirect:employees";
+        return "redirect:/employees";
     }
 
 }

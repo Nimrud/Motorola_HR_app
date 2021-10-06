@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
+    <link th:href="@{/main.css}" rel="stylesheet" />
 </head>
 <body>
 
-<div th:align="left">
-    <h2>Wybierz czynność:</h2>
-    <h2><a th:href="@{/employees}" th:text="'Lista pracowników'">Employees list</a></h2>
-    <h2><a th:href="@{/admin/employeeForm}" th:text="'Dodanie nowego pracownika'">New Employee</a></h2>
+<p th:replace="~{fragments/menu :: menuFragment}"></p>
+
+</br></br>
+<div th:align="center">
+    <img src="../static/images/HR-3.jpg" th:src="@{images/HR-3.jpg}"
+         alt="Prawie najlepsza aplikacja do zarządzania zasobami ludzkimi ;-)"/>
 </div>
+
+<footer th:replace="~{fragments/footer :: footerFragment}">Footer</footer>
 
 </body>
 </html>

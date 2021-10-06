@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>About this App</title>
+    <title>o aplikacji</title>
+    <link th:href="@{/main.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
-<div th:align="center">
-    <h2>Twórcy aplikacji:</h2>
-    <h2>Joanna Czerwińska (<a href="https://github.com/asia962">Github</a>)</h2>
-    <h2>Karol Milanowski (<a href="https://github.com/karmilanowski">Github</a>)</h2>
-    <h2>Krzysztof Jaczewski (<a href="https://github.com/Nimrud">Github</a>)</h2>
+<p th:replace="~{fragments/menu :: menuFragment}"></p>
+
+<div id="aboutApp">
+    <p id="about">Prosta aplikacja do zarządzania pracownikami w firmie. Pozwala wyświetlić ich listę,
+    dodać nowych pracowników, wyświetlić listę przelewów itp.</p>
+    </br></br>
+    <p><u>Użyte języki, frameworki, technologie:</u>
+    <ul>
+        <li>Java 11+</li>
+        <li>Spring (Web, Data JPA, Boot, Security)</li>
+        <li>H2</li>
+        <li>Hibernate Validator</li>
+        <li>Lombok</li>
+        <li>Thymeleaf</li>
+        <li>HTML 5</li>
+        <li>CSS</li>
+    </ul>
+    </p>
 </div>
+
+<footer th:replace="~{fragments/footer :: footerFragment}">Footer</footer>
 
 </body>
 </html>

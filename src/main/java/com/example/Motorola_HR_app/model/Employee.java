@@ -25,13 +25,12 @@ public class Employee {
     //@PESEL
     private String pesel;
     private String address;
-    @NotBlank
-    private String position;
+    private Position position;
     private String description;
     @ManyToOne
     private Payment payment;
 
-    public Employee(Long id, String firstName, String lastName, String email, String pesel, String address, String position, String description, Payment payment) {
+    public Employee(Long id, String firstName, String lastName, String email, String pesel, String address, Position position, String description, Payment payment) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,5 +40,28 @@ public class Employee {
         this.position = position;
         this.description = description;
         this.payment = payment;
+    }
+
+    public enum Position {
+        CEO("prezes"),
+        HR("kadry"),
+        ACCOUNTANT("księgowość"),
+        JUNIOR("junior developer"),
+        MID("developer"),
+        SENIOR("senior developer"),
+        IT_SPECIALIST("informatyk"),
+        CLEANING("cleaning manager"),
+        SECURITY("ochrona");
+
+
+        private final String displayPosition;
+
+        Position(String displayPosition) {
+            this.displayPosition = displayPosition;
+        }
+
+        public String getDisplayPosition() {
+            return displayPosition;
+        }
     }
 }

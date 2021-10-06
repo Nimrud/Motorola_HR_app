@@ -5,6 +5,8 @@ import com.example.Motorola_HR_app.repository.EmployeeRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +37,14 @@ public class EmployeeService {
 
     public void deleteEmployeeById(long id) {
         this.employeeRepository.deleteById(id);
+    }
+
+    public List<Employee.Position> getAllPositions() {
+        List<Employee.Position> positions = new ArrayList<>();
+        for (Employee.Position p : EnumSet.allOf(Employee.Position.class)) {
+            positions.add(p);
+        }
+        return positions;
     }
 
 }

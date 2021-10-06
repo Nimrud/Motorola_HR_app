@@ -32,8 +32,8 @@ class EmployeeControllerTest {
     @Test
     public void getAllEmployees() {
         //given:
-        Employee employee1 = new Employee(1L, "A", "B", "ab@op.pl", "99887766554", "aaa", "position", "description", new Payment());
-        Employee employee2 = new Employee(2L, "CC", "CB", "cccb@op.pl", "99887766554", "aaa", "position", "description", new Payment());
+        Employee employee1 = new Employee(1L, "A", "B", "ab@op.pl", "99887766554", "aaa", Employee.Position.CEO, "description", new Payment());
+        Employee employee2 = new Employee(2L, "CC", "CB", "cccb@op.pl", "99887766554", "aaa", Employee.Position.JUNIOR, "description", new Payment());
         List<Employee> expected = Arrays.asList(employee1, employee2);
         when(employeeRepository.findAll()).thenReturn(expected);
 
@@ -45,8 +45,8 @@ class EmployeeControllerTest {
     @Test
     public void getEmployeeById(){
         //given:
-        Employee employee1 = new Employee(1L, "A", "B", "ab@op.pl", "99887766554", "aaa", "position", "description", new Payment());
-        Employee employee2 = new Employee(2L, "CC", "CB", "cccb@op.pl", "99887766554", "aaa", "position", "description", new Payment());
+        Employee employee1 = new Employee(1L, "A", "B", "ab@op.pl", "99887766554", "aaa", Employee.Position.CEO, "description", new Payment());
+        Employee employee2 = new Employee(2L, "CC", "CB", "cccb@op.pl", "99887766554", "aaa", Employee.Position.JUNIOR, "description", new Payment());
 
         when(employeeRepository.findById(1L)).thenReturn(Optional.of(employee1));
 
